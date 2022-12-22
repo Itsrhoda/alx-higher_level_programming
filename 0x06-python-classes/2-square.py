@@ -5,8 +5,7 @@ class Square;
 ''' Creating an Object template '''
 
     def __init__(self, size = 0):
-        '''
-
+        
             The init method initializes the class instance
 
         @self:
@@ -14,7 +13,7 @@ class Square;
 
         @size:
             The size of the square, must be a +ve integer
-        '''
+    
         If type(size) is int:
             if size < 0:
                 raise ValueError('Size must be >= 0')
