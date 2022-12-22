@@ -7,15 +7,15 @@ class Square;
     def __init__(self, size = 0):
         '''
 
-            The init method initializes that class instance
+            The init method initializes the class instance
 
         @self:
             A parameter used to refer to the class instance
 
         @size:
-            The sizze of the square, must be a +ve integer
+            The size of the square, must be a +ve integer
         '''
-        If type(sizze) is int:
+        If type(size) is int:
             if size < 0:
                 raise ValueError('Size must be >= 0')
             else:
