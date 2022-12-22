@@ -8,6 +8,7 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """Initialize a new Node.
+
         Args:
             data (int): The data of the new Node.
             next_node (Node): The next node of the new Node.
@@ -29,13 +30,14 @@ class Node:
     @property
     def next_node(self):
         """Get/set the next_node of the Node."""
-        return (self.__next__node)
+        return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     """Represent a singly-linked list."""
