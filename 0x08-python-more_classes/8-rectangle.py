@@ -77,7 +77,7 @@ class Rectangle:
 
     def __str__(self):
         """Return the printable representation of the Rectangle.
-        Represents the rectangle wihthe # character.
+        Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -98,4 +98,4 @@ class Rectangle:
     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
-        prin("Bye rectangle...")
+        print("Bye rectangle...")
