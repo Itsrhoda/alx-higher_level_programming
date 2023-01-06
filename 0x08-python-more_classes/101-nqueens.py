@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# 101-nqueens.py
 """Solves the N-queens puzzle.
 Determines all possible solutions to placing N
 N non-attacking queens on an NxN chessboard.
@@ -47,7 +48,7 @@ def xout(board, row, col):
     longer be played are X-ed out.
     Args:
         board (list): The current working chessboard.
-        row (int): he row where a queen was last played.
+        row (int): The row where a queen was last played.
         col (int): The column where a queen was last played.
     """
     # X out all forward spots
