@@ -10,9 +10,9 @@ class Square(Rectangle):
         """Method that initialized the square
 
         Args:
-            size: side's size of the  square
-            x: Position on x axis.
-            y: Position on y axis.
+           size: side's size of the  square
+           x: Position on x axis.
+           y: Position on y axis.
 
         Return:
            Always nothing.
@@ -36,7 +36,7 @@ class Square(Rectangle):
         """Setter the size of the square
 
         Args:
-            value: Size to assign
+           value: Size to assign
 
         Return:
            Always Nothing
