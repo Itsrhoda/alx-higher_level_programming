@@ -16,7 +16,7 @@ class Test_Base(unittest.TestCase):
         """
         b1 = Base()
         self.assertIsInstance(b1, Base)
-        self.asserFalse(type(b1) == type(Base))
+        self.assertFalse(type(b1) == type(Base))
         self.assertFalse(id(b1) == id(Base))
         b2 = Base()
         self.assertTrue(type(b1) == type(b2))
@@ -108,7 +108,7 @@ class Test_Base(unittest.TestCase):
         json_dictionary = Base.to_json_string(sorted(dictionary.items()))
         self.assertEqual(json_dictionary, '[["height", 50], ["id", 89], '
                          '["width", 30], ["x", 0], ["y", 0]]')
-        self.assertTrue(type(dictionry) !!= type(json_dictionary))
+        self.assertTrue(type(dictionry) != type(json_dictionary))
 
         dictionary = None
         json_dictionary = Base.to_json_string(dictionary)
@@ -125,7 +125,7 @@ class Test_Base(unittest.TestCase):
         """
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
-        Rectangle.save_to_file[r1,r2])
+        Rectangle.save_to_file([r1,r2])
         with open("Rectangle.json", "r") as file:
             sum_read = sum(list(map(lambda x: ord(x), file.read())))
             sum_expected = sum(list(map(lambda x: ord(x), '[{"y": 8, "x": 2, '
@@ -140,7 +140,7 @@ class Test_Base(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             sum_read = sum(list(map(lambda x: ord(x), file.read())))
             sum_expected = sum(list(map(lambda x: ord(x), '[{"y": 0, "x": 0, '
-                                        '"id":3, "width": 10, "height": 7}, '
+                                        '"id": 3, "width": 10, "height": 7}, '
                                         '{"y": 0, "x": 0, "id": 4, '
                                         '"width": 2, "height": 4}]')))
             self.assertEqual(sum_read, sum_expected)
@@ -168,7 +168,7 @@ class Test_Base(unittest.TestCase):
                                         '"size": 2}]')))
             self.assertEqual(sum_read, sum_expected)
 
-        r1 = Square(10, 7))
+        r1 = Square(10, 7)
         r2 = Square(2, 4)
         Square.save_to_file([r1, r2])
         with open("Square.json", "r") as file:
@@ -341,7 +341,7 @@ class Test_Base(unittest.TestCase):
          self.assertEqual(str(s1), str(list_square_output[0]))
          self.assertEqual(str(s2), str(list_square_output[1]))
 
-         s1 =nSquare(10, 50)
+         s1 = Square(10, 50)
          s2 = Square(2, 0, 0, 89)
          list_square_input = [s1, s2]
          Square.save_to_file(list_square_input)
@@ -363,7 +363,7 @@ class Test_Base(unittest.TestCase):
         # Checks save to csv file
         Rectangle.save_to_file_csv(None)
         with open("Rectangle.csv", "r") as file:
-            self.assertEqual(file.read(0, '[]')
+            self.assertEqual(file.read(), '[]')
 
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
