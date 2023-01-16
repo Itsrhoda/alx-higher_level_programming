@@ -180,14 +180,14 @@ class Test_rectangle(unittest.TestCase):
             r3.display()
             self.assertEqual(mock_out.getvalue(), output_3)
 
-        output_4 = " ##\n ##\n"
+        output_4 = "  ##\n  ##\n"
         r4 = Rectangle(2, 2, 2, 0)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             r4.display()
             self.assertEqual(mock_out.getvalue(), output_4)
 
-        output_5 = "\n\n ##\n ##\n"
-        r5 = Rectangle92, 2, 2, 2, 2)
+        output_5 = "\n\n  ##\n  ##\n"
+        r5 = Rectangle(2, 2, 2, 2)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             r5.display()
             self.assertEqual(mock_out.getvalue(), output_5)
@@ -201,7 +201,7 @@ class Test_rectangle(unittest.TestCase):
         self.assertEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
         r3 = Rectangle(5, 5)
         self.assertEqual(str(r3), "[Rectangle] (2) 0/0 - 5/5")
-        r4 = Rectangle(4, 6, 2, 50)
+        r4 = Rectangle(4, 6, 2, 1, 50)
         self.assertEqual(r4.__str__(), "[Rectangle] (50) 2/1 - 4/6")
 
     def test_update(self):
@@ -220,7 +220,7 @@ class Test_rectangle(unittest.TestCase):
         r1.update(x=1, height=2, y=3, width=4, id=30)
         self.assertEqual(r1.__str__(), "[Rectangle] (30) 1/3 - 4/2")
         r1.update(id=67)
-        self.assertEqual(r1.__str__(). "[Rectangle] (67) 1/3 - 4/2")
+        self.assertEqual(r1.__str__(), "[Rectangle] (67) 1/3 - 4/2")
         r1.update(10, 10, 10, 10, 10, x=1, height=2, y=3, width=4, id=30)
         self.assertEqual(r1.__str__(), "[Rectangle] (10) 10/10 - 10/10")
         r1.update(45, x=1, height=2, y=3, width=4, id=30)
@@ -260,26 +260,26 @@ class Test_rectangle(unittest.TestCase):
         self.assertEqual(r5_dictionary, {'x': 5, 'y': 6, 'id': 4, 'height': 2,
                                          'width': 10})
 
-        def tearDown(self):
-            """Tear down test method to reset class attribute
-            """
-            Base._Base__nb_objects = 0
-            try:
-                os.remove("Rectangle.json")
-            except Exception:
-                pass
-            try:
-                os.remove("Square.json")
-            except Exception:
-                pass
-            try:
-                os.remove("Rectangle.csv")
-            except Exception:
-                pass
-            try:
-                os.remove("Square.csv")
-            except Exception:
-                pass
+    def tearDown(self):
+        """Tear down test method to reset class attribute
+        """
+        Base._Base__nb_objects = 0
+        try:
+            os.remove("Rectangle.json")
+        except Exception:
+            pass
+        try:
+            os.remove("Square.json")
+        except Exception:
+            pass
+        try:
+            os.remove("Rectangle.csv")
+        except Exception:
+            pass
+        try:
+            os.remove("Square.csv")
+        except Exception:
+            pass
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
