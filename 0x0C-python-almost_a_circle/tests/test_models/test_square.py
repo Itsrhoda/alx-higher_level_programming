@@ -162,27 +162,27 @@ class Test_square(unittest.TestCase):
         s2 = Square(2, 0)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             s2.display()
-            self.asertEqual(mock_out.getvalue(), output_2)
+            self.assertEqual(mock_out.getvalue(), output_2)
 
-        output_3 = "\n\n ###\n ###\n ###\n"
+        output_3 = "\n\n  ###\n  ###\n  ###\n"
         s3 = Square(3, 2, 2, 2)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             s3.display()
             self.assertEqual(mock_out.getvalue(), output_3)
 
-        output_4 = " ##\n ##\n"
+        output_4 = "  ##\n  ##\n"
         s4 = Square(2, 2, 0)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             s4.display()
             self.assertEqual(mock_out.getvalue(), output_4)
 
-        output_5 = "\n\n ##\n ##\n"
+        output_5 = "\n\n  ##\n  ##\n"
         s5 = Square(2, 2, 2)
         with patch('sys.stdout', new=StringIO()) as mock_out:
             s5.display()
             self.assertEqual(mock_out.getvalue(), output_5)
 
-        output_6 = "\n\n\n ##\n ##\n"
+        output_6 = "\n\n\n  ##\n  ##\n"
         s6 = Square(2, 2, 3, 100)
         with patch('sys.stdout',  new= StringIO()) as mock_out:
             s6.display()
@@ -219,7 +219,7 @@ class Test_square(unittest.TestCase):
         self.assertEqual(s1.__str__(), "[Square] (1) 12/1 - 7")
         s1.update(size=7, id=89, y=1)
         self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
-        s1.update(10, 10, 10, 10, x=1, sie=2, y=3, id=30)
+        s1.update(10, 10, 10, 10, x=1, size=2, y=3, id=30)
         self.assertEqual(s1.__str__(), "[Square] (10) 10/10 - 10")
         s1.update(73, id=30)
         self.assertEqual(s1.__str__(), "[Square] (73) 10/10 - 10")
@@ -252,7 +252,7 @@ class Test_square(unittest.TestCase):
     def tearDown(self):
         """Tear down test method to reset class attribute
         """
-        Base._Base__nb_objects
+        Base._Base__nb_objects = 0
         try:
             os.remove("Rectangle.json")
         except Exception:
