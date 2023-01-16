@@ -162,7 +162,7 @@ class Rectangle(Base):
            **kwargs: Dictionary with arguments
 
         Return:
-            Always nothing
+           Always nothing
 
         """
         dict_order = ['id', 'width', 'height', 'x', 'y']
