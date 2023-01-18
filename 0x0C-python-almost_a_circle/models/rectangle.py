@@ -84,7 +84,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Setter of x variable 
+        """Setter of x variable
 
         Args:
            value: value to assign to x variable
