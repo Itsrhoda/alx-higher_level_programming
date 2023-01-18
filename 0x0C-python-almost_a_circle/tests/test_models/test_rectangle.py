@@ -9,7 +9,7 @@ from io import StringIO
 
 
 class Test_rectangle(unittest.TestCase):
-    """Defines a class to evaluate different test cases for rectangle.py file
+    """Defines a class to evaluate diferent test cases for rectangle.py file
     """
 
     def test_instance_class(self):
@@ -57,7 +57,7 @@ class Test_rectangle(unittest.TestCase):
 
         r5 = Rectangle(10, 2, 4, 5, 50)
         self.assertEqual(r5.id, 50)
-        self.asertEqual(r5.width, 10)
+        self.assertEqual(r5.width, 10)
         self.assertEqual(r5.height, 2)
         self.assertEqual(r5.x, 4)
         self.assertEqual(r5.y, 5)
@@ -77,7 +77,7 @@ class Test_rectangle(unittest.TestCase):
     def test_raise_errors(self):
         """Check for raises errors
         """
-        # Checks for differents instances
+        # Checks for diferents instances
         with self.assertRaises(TypeError):
             r1 = Rectangle()
         with self.assertRaises(NameError):
