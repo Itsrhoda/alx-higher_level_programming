@@ -9,7 +9,7 @@ import os
 
 
 class Test_Base(unittest.TestCase):
-    """Defines a class to evaluate different test cases for base.py file"""
+    """Defines a class to evaluate diferent test cases for base.py file"""
 
     def test_instance_type_id_class(self):
         """Checks for a instance of the class
@@ -108,7 +108,7 @@ class Test_Base(unittest.TestCase):
         json_dictionary = Base.to_json_string(sorted(dictionary.items()))
         self.assertEqual(json_dictionary, '[["height", 50], ["id", 89], '
                          '["width", 30], ["x", 0], ["y", 0]]')
-        self.assertTrue(type(dictionry) != type(json_dictionary))
+        self.assertTrue(type(dictionary) != type(json_dictionary))
 
         dictionary = None
         json_dictionary = Base.to_json_string(dictionary)
@@ -199,7 +199,7 @@ class Test_Base(unittest.TestCase):
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_output, [{'height': 4, 'width': 10, 'id': 89},
-                                        {'height': 7, 'width': 1, 'id': 7}])
+                                       {'height': 7, 'width': 1, 'id': 7}])
         self.assertTrue(type(list_output) == list)
 
         list_input = [
@@ -210,8 +210,8 @@ class Test_Base(unittest.TestCase):
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_output, [{'height': 4, 'width': 10, 'id': 89,
                                         'x': 3, 'y': 2},
-                                        {'height': 7, 'width': 1, 'id': 7,
-                                         'x': 3}])
+                                       {'height': 7, 'width': 1, 'id': 7,
+                                        'x': 3}])
         self.assertTrue(type(list_output) == list)
 
         list_input = [
@@ -260,7 +260,7 @@ class Test_Base(unittest.TestCase):
         r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual(str(r2), "[Rectangle] (89) 3/4 - 3/5")
         self.assertFalse(r1 is r2)
-        self.assertFalse(r1 = r2)
+        self.assertFalse(r1 == r2)
 
         r1 = Rectangle(3, 5, 3, 4)
         r1_dictionary = r1.to_dictionary()
