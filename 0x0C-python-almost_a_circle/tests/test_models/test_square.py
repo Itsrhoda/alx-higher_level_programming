@@ -184,7 +184,7 @@ class Test_square(unittest.TestCase):
 
         output_6 = "\n\n\n  ##\n  ##\n"
         s6 = Square(2, 2, 3, 100)
-        with patch('sys.stdout',  new= StringIO()) as mock_out:
+        with patch('sys.stdout', new=StringIO()) as mock_out:
             s6.display()
             self.assertEqual(mock_out.getvalue(), output_6)
 
