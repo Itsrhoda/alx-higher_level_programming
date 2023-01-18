@@ -175,7 +175,7 @@ class Rectangle(Base):
                     pass
                 i += 1
         else:
-            for key on dict_order:
+            for key in dict_order:
                 try:
                     setattr(self, key, kwargs[key])
                 except KeyError:
