@@ -125,7 +125,7 @@ class Test_Base(unittest.TestCase):
         """
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
-        Rectangle.save_to_file([r1,r2])
+        Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
             sum_read = sum(list(map(lambda x: ord(x), file.read())))
             sum_expected = sum(list(map(lambda x: ord(x), '[{"y": 8, "x": 2, '
@@ -148,7 +148,6 @@ class Test_Base(unittest.TestCase):
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
-
 
     def test_rectangle_save_to_file(self):
         Rectangle.save_to_file([])
@@ -298,64 +297,64 @@ class Test_Base(unittest.TestCase):
         self.assertFalse(s1 is s2)
         self.assertFalse(s1 == s2)
 
-     def test_load_from_file(self):
-         """Checks for load_from_file
-         """
-         # Check for rectangle load from file
-         list_rectangles_output = Rectangle.load_from_file()
-         self.assertEqual(str(list_rectangles_output), "[]")
+    def test_load_from_file(self):
+        """Checks for load_from_file
+        """
+        # Check for rectangle load from file
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(str(list_rectangles_output), "[]")
 
-         r1 = Rectangle(10, 7, 2, 8)
-         r2 = Rectangle(2, 4)
-         list_rectangles_input = [r1, r2]
-         Rectangle.save_to_file(list_rectangles_input)
-         list_rectangles_output = Rectangle.load_from_file()
-         self.assertEqual(str(r1), str(list_rectangles_output[0]))
-         self.assertEqual(str(r2), str(list_rectangles_output[1]))
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
+        self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-         r1 = Rectangle(10, 50)
-         r2 = Rectangle(2, 4, 0, 0, 89)
-         list_rectangles_input = [r1, r2]
-         Rectangle.save_to_file(list_rectangles_input)
-         list_rectangles_output = Rectangle.load_from_file()
-         self.assertEqual(str(r1), str(list_rectangles_output[0]))
-         self.assertEqual(str(r2), str(list_rectangles_output[1]))
+        r1 = Rectangle(10, 50)
+        r2 = Rectangle(2, 4, 0, 0, 89)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
+        self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-         r1 = Rectangle(10, 50)
-         r2 = Rectangle(2, 4, 0, 0)
-         list_rectangles_input = [r1, r2]
-         Rectangle.save_to_file(list_rectangles_input)
-         list_rectangles_output = Rectangle.load_from_file()
-         self.assertEqual(str(r1), str(list_rectangles_output[0]))
-         self.assertEqual(str(r2), str(list_rectangles_output[1]))
+        r1 = Rectangle(10, 50)
+        r2 = Rectangle(2, 4, 0, 0)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
+        self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-         # Check for square load from file
-         list_square_output = Square.load_from_file()
-         self.assertEqual(str(list_square_output), "[]")
+        # Check for square load from file
+        list_square_output = Square.load_from_file()
+        self.assertEqual(str(list_square_output), "[]")
 
-         s1 = Square(10, 7, 2, 8)
-         s2 = Square(2, 4)
-         list_square_input = [s1, s2]
-         Square.save_to_file(list_square_input)
-         list_square_output = Square.load_from_file()
-         self.assertEqual(str(s1), str(list_square_output[0]))
-         self.assertEqual(str(s2), str(list_square_output[1]))
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(2, 4)
+        list_square_input = [s1, s2]
+        Square.save_to_file(list_square_input)
+        list_square_output = Square.load_from_file()
+        self.assertEqual(str(s1), str(list_square_output[0]))
+        self.assertEqual(str(s2), str(list_square_output[1]))
 
-         s1 = Square(10, 50)
-         s2 = Square(2, 0, 0, 89)
-         list_square_input = [s1, s2]
-         Square.save_to_file(list_square_input)
-         list_square_output = Square.load_from_file()
-         self.assertEqual(str(s1), str(list_square_output[0]))
-         self.assertEqual(str(s2), str(list_square_output[1]))
+        s1 = Square(10, 50)
+        s2 = Square(2, 0, 0, 89)
+        list_square_input = [s1, s2]
+        Square.save_to_file(list_square_input)
+        list_square_output = Square.load_from_file()
+        self.assertEqual(str(s1), str(list_square_output[0]))
+        self.assertEqual(str(s2), str(list_square_output[1]))
 
-         s1 = Square(10, 50)
-         s2 = Square(2, 4, 0, 0)
-         list_square_input = [s1, s2]
-         Square.save_to_file(list_square_input)
-         list_square_output = Square.load_from_file()
-         self.assertEqual(str(s1), str(list_square_output[0]))
-         self.assertEqual(str(s2), str(list_square_output[1]))
+        s1 = Square(10, 50)
+        s2 = Square(2, 4, 0, 0)
+        list_square_input = [s1, s2]
+        Square.save_to_file(list_square_input)
+        list_square_output = Square.load_from_file()
+        self.assertEqual(str(s1), str(list_square_output[0]))
+        self.assertEqual(str(s2), str(list_square_output[1]))
 
     def test_save_csv(self):
         """Checks save_csv method
@@ -400,42 +399,43 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(str(r1), str(list_rectangles_output[0]))
         self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-            r1 = Rectangle(10, 50)
-            r2 = Rectangle(2, 4, 0, 0, 89)
-            list_rectangles_input = [r1, r2]
-            Rectangle.save_to_file_csv(list_rectangles_input)
-            list_rectangles_output = Rectangle.load_from_file_csv()
-            self.assertEqual(str(r1), str(list_rectangles_output[0]))
-            self.assertEqual(str(r2), str(list_rectangles_output[1]))
+        r1 = Rectangle(10, 50)
+        r2 = Rectangle(2, 4, 0, 0, 89)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file_csv()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
+        self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-            r1 = Rectangle(10, 50)
-            r2 = Rectangle(2, 4, 0, 0)
-            list_rectangles_input = [r1, r2]
-            Rectangle.save_to_file_csv(list_rectangles_input)
-            list_rectangles_output = Rectangle.load_from_file_csv()
-            self.assertEqual(str(r1), str(list_rectangles_output[0]))
-            self.assertEqual(str(r2), str(list_rectangles_output[1]))
+        r1 = Rectangle(10, 50)
+        r2 = Rectangle(2, 4, 0, 0)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file_csv()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
+        self.assertEqual(str(r2), str(list_rectangles_output[1]))
 
-        def tearDown(self):
-            """Tear down test method to reset class attribute
-            """
-            Base._Base__nb_objects = 0
-            try:
-                os.remove("Rectangle.json")
-            except Exception:
-                pass
-            try:
-                os.remove("Square.json")
-            except Exception:
-                pass
-            try:
-                os.remove("Rectangle.csv")
-            except Exception:
-                pass
-            try:
-                os.remove("Square.csv")
-            except Exception:
-                pass
+    def tearDown(self):
+        """Tear down test method to reset class attribute
+        """
+        Base._Base__nb_objects = 0
+        try:
+            os.remove("Rectangle.json")
+        except Exception:
+            pass
+        try:
+            os.remove("Square.json")
+        except Exception:
+            pass
+        try:
+            os.remove("Rectangle.csv")
+        except Exception:
+            pass
+        try:
+            os.remove("Square.csv")
+        except Exception:
+            pass
 
-    if __name__ == '__main__':
-        unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()

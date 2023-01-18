@@ -110,7 +110,7 @@ class Test_rectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r13 = Rectangle(15, 0)
 
-        #Checks for setters
+        # Checks for setters
         with self.assertRaises(TypeError):
             r1.x = "4"
         with self.assertRaises(ValueError):
@@ -197,7 +197,7 @@ class Test_rectangle(unittest.TestCase):
         """
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(r1), "[Rectangle] (12) 2/1 - 4/6")
-        r2 = Rectangle(5, 5, 1) 
+        r2 = Rectangle(5, 5, 1)
         self.assertEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
         r3 = Rectangle(5, 5)
         self.assertEqual(str(r3), "[Rectangle] (2) 0/0 - 5/5")
@@ -280,6 +280,7 @@ class Test_rectangle(unittest.TestCase):
             os.remove("Square.csv")
         except Exception:
             pass
+
 
 if __name__ == '__main__':
     unittest.main()
