@@ -10,7 +10,7 @@ class Square(Rectangle):
         """Method that initialized the square
 
         Args:
-           size: side's size of the  square
+           size: side's size of the square
            x: Position on x axis.
            y: Position on y axis.
 
