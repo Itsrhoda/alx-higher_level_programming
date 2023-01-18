@@ -54,7 +54,7 @@ class Base:
         Return:
             Always nothing
         """
-        filename = "{].json".format(cls.__name__)
+        filename = "{}.json".format(cls.__name__)
         list_dictionaries = []
         if list_objs is not None:
             for obj in list_objs:
@@ -89,7 +89,7 @@ class Base:
            attributes already set
 
         Args:
-           dictionary: Dictionary with all atributes of the object
+           dictionary: Dictionary with all attributes of the object
 
         Return:
            A instance with all attributes already set
